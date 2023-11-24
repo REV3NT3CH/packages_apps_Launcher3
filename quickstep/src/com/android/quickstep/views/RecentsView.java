@@ -1345,8 +1345,9 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
     @Override
     protected void onPageBeginTransition() {
         super.onPageBeginTransition();
-        if (getCurrentPageTaskView() != null)
+        if (getCurrentPageTaskView() != null) {
             mStartPkg = getCurrentPageTaskView().getTask().key.getPackageName();
+        }
         if (mOverviewStateEnabled) { // only when in overview
             InteractionJankMonitorWrapper.begin(/* view= */ this,
                     InteractionJankMonitorWrapper.CUJ_RECENTS_SCROLLING);
