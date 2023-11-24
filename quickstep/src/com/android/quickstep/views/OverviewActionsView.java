@@ -153,7 +153,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         SharedPreferences prefs = LauncherPrefs.getPrefs(context);
         mScreenshot = prefs.getBoolean(KEY_RECENTS_SCREENSHOT, true);
         mClearAll = prefs.getBoolean(KEY_RECENTS_CLEAR_ALL, true);
-        mLens = prefs.getBoolean(KEY_RECENTS_LENS, false);
+        mLens = prefs.getBoolean(KEY_RECENTS_LENS, true);
         mLock = prefs.getBoolean(KEY_RECENTS_LOCK, true);
         prefs.registerOnSharedPreferenceChangeListener(this);
         mShakeUtils = new ShakeUtils(context);
@@ -263,7 +263,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         } else if (key.equals(KEY_RECENTS_CLEAR_ALL)) {
             mClearAll = prefs.getBoolean(KEY_RECENTS_CLEAR_ALL, true);
         } else if (key.equals(KEY_RECENTS_LENS)) {
-            mLens = prefs.getBoolean(KEY_RECENTS_LENS, false);
+            mLens = prefs.getBoolean(KEY_RECENTS_LENS, true);
         } else if (key.equals(KEY_RECENTS_LOCK)) {
             mLock = prefs.getBoolean(KEY_RECENTS_LOCK, true);
         } else if (key.equals(KEY_RECENTS_SHAKE_CLEAR_ALL)) {
